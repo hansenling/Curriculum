@@ -6,7 +6,6 @@ public class CharMove : MonoBehaviour {
 	private float weaponspeed = 20;
 	public float speed = 5;
 	private bool skill1 = false;
-	private bool skill2 = false;
 	public GameObject weapon;
 	// Use this for initialization
 	void Start () {
@@ -35,9 +34,7 @@ public class CharMove : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Q)){
 			skill1 = true;
 		}
-		if (Input.GetKeyDown(KeyCode.R)){
-			skill2 = true;
-		}	
+	
 	
 	}
 
@@ -60,17 +57,5 @@ public class CharMove : MonoBehaviour {
 		Instantiate (weapon, hitinfo.point + new Vector3(0, 1, 0), Quaternion.identity);
 		skill1 = false;
 	}
-
-	void useSkill2(Vector3 mouseposition){
-		RaycastHit hitinfo;
-		Ray cameraray = Camera.main.ScreenPointToRay(Input.mousePosition);  
-		Physics.Raycast (cameraray.origin, cameraray.direction, out hitinfo);
-
-		GameObject[] weapons = GameObject.FindGameObjectsWithTag ("weapon");
-		foreach (GameObject weapon in weapons){
-			weapon.GetComponent<Rigidbody>().velocity = (hitinfo.point-weapon.GetComponent<Transform>().position).normalized * weaponspeed;
-		}
-		skill2 = false;
-	}
-
+	
 }
