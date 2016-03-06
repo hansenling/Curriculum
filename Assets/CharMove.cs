@@ -7,6 +7,7 @@ public class CharMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		print ("HI");
 			
 	}
 	
