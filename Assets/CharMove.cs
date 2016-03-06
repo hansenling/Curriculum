@@ -5,6 +5,7 @@ public class CharMove : MonoBehaviour {
 	Vector3 movetoposition;
 	public float speed = 5;
 	private bool skill1 = false;
+	public GameObject weapon;
 	// Use this for initialization
 	void Start () {
 		print ("stupid change");
