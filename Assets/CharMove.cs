@@ -5,9 +5,6 @@ public class CharMove : MonoBehaviour {
 	Vector3 movetoposition;
 	public float speed = 5;
 	private bool skill1 = false;
-	private bool skill2 = false;
-	public GameObject weapon;
-	private float weaponspeed = 20;
 	// Use this for initialization
 	void Start () {
 		print ("stupid change");
@@ -28,16 +25,11 @@ public class CharMove : MonoBehaviour {
 			Vector3 mouseposition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			useSkill1(mouseposition);
 		}
-		if (Input.GetMouseButtonUp (0) && skill2) {
-			Vector3 mouseposition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			useSkill2(mouseposition);
-		}
+
 		if (Input.GetKeyDown(KeyCode.Q)){
 			skill1 = true;
 		}
-		if (Input.GetKeyDown(KeyCode.R)){
-			skill2 = true;
-		}	
+
 	
 	}
 
@@ -61,16 +53,5 @@ public class CharMove : MonoBehaviour {
 		skill1 = false;
 	}
 
-	void useSkill2(Vector3 mouseposition){
-		RaycastHit hitinfo;
-		Ray cameraray = Camera.main.ScreenPointToRay(Input.mousePosition);  
-		Physics.Raycast (cameraray.origin, cameraray.direction, out hitinfo);
-
-		GameObject[] weapons = GameObject.FindGameObjectsWithTag ("weapon");
-		foreach (GameObject weapon in weapons){
-			weapon.GetComponent<Rigidbody>().velocity = (hitinfo.point-weapon.GetComponent<Transform>().position).normalized * weaponspeed;
-		}
-		skill2 = false;
-	}
 
 }
