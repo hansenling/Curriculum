@@ -10,7 +10,7 @@ public class CharMove : MonoBehaviour {
 	public GameObject weapon;
 	// Use this for initialization
 	void Start () {
-			
+		print ("stupid change");
 	}
 	
 	// Update is called once per frame
