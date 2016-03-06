@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CharMove.cs">
+    <Files>
+      <File FileName="Assets\Move.cs" Line="10" Column="1" />
+      <File FileName="Assets\CharMove.cs" Line="27" Column="46" />
+      <File FileName="..\GitHub\Game\Game\Assets\Cursor.cs" Line="65" Column="4" />
+      <File FileName="Assets\CameraPosition.cs" Line="13" Column="92" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
