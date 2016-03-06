@@ -3,11 +3,11 @@ using System.Collections;
 
 public class CharMove : MonoBehaviour {
 	Vector3 movetoposition;
-	private float weaponspeed = 20;
 	public float speed = 5;
 	private bool skill1 = false;
 	private bool skill2 = false;
 	public GameObject weapon;
+	private float weaponspeed = 20;
 	// Use this for initialization
 	void Start () {
 		print ("stupid change");
