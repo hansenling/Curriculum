@@ -81,7 +81,7 @@ public class CharMove : MonoBehaviour {
 		GameObject[] temp = GameObject.FindGameObjectsWithTag ("weapon");
 		print (temp.Length);
 		foreach (GameObject weapon in temp) {
-			weapons.Add (weapon);
+			weapons.Add (	weapon);
 			//weapons.Insert(0, 1);
 		}
 		for (int i = 0; i < weapons.Count; i++) {

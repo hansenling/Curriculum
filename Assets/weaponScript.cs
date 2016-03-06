@@ -13,8 +13,11 @@ public class weaponScript : MonoBehaviour {
 		
 	}
 	public void Eliminate(){
-		print ("HERE@");
 		GetComponent<Rigidbody> ().velocity = new Vector3 (0, 30, 0);
-		Destroy (this, 1);
+		Invoke ("deleteSelf", 1);
+	}
+	public void deleteSelf(){
+		this.gameObject.SetActive (false);
 	}
 }
+
