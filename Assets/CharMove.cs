@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 public class CharMove : MonoBehaviour {
 	Vector3 movetoposition;
 	public float speed = 5;
@@ -32,13 +32,17 @@ public class CharMove : MonoBehaviour {
 			Vector3 mouseposition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			useSkill2(mouseposition);
 		}
+
 		if (Input.GetKeyDown(KeyCode.Q)){
 			skill1 = true;
 		}
 		if (Input.GetKeyDown(KeyCode.R)){
 			skill2 = true;
 		}	
-	
+		if (Input.GetKeyDown(KeyCode.W)){
+			print ("W");
+			useSkill3();
+		}		
 	}
 
 	void moveChar(Vector3 mouseposition){
@@ -72,5 +76,18 @@ public class CharMove : MonoBehaviour {
 		}
 		skill2 = false;
 	}
+	void useSkill3(){
+		List<GameObject> weapons = new List<GameObject>();
+		GameObject[] temp = GameObject.FindGameObjectsWithTag ("weapon");
+		print (temp.Length);
+		foreach (GameObject weapon in temp) {
+			weapons.Add (weapon);
+			//weapons.Insert(0, 1);
+		}
+		for (int i = 0; i < weapons.Count; i++) {
+			weapons[i].GetComponent<weaponScript>().Eliminate();
+		}
+	}
 
 }
+
